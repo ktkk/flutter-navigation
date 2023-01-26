@@ -30,7 +30,7 @@ class InstructionPage extends StatelessWidget {
             Text(instruction.id),
             ElevatedButton(
               onPressed: () {
-                context.pushNamed(
+                context.goNamed(
                   'finishInstruction',
                   params: {
                     'rideId': rideId,

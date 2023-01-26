@@ -32,7 +32,7 @@ class RidesPage extends StatelessWidget {
             itemCount: rides.length,
             itemBuilder: (_, index) => ElevatedButton(
               onPressed: () {
-                context.pushNamed(
+                context.goNamed(
                   'ride',
                   params: {
                     'rideId': rides[index].id,

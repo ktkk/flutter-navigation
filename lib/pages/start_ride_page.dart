@@ -30,7 +30,9 @@ class StartRidePage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text(ride.id)],
+          children: [
+            Text(ride.id),
+          ],
         ),
       ),
     );
