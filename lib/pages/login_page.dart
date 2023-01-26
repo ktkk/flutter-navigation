@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
             else
               ElevatedButton(
                   onPressed: () {
-                    AuthenticationServiceScope.of(context).signIn('test-user');
+                    AuthenticationServiceScope.of(context).signIn();
                     setState(() {
                       isLoggingIn = true;
                     });

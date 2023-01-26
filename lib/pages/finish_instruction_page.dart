@@ -5,7 +5,7 @@ class FinishInstructionPage extends StatelessWidget {
   FinishInstructionPage({
     Key? key,
     // required this.instruction,
-    required this.rideId,
+    // required this.rideId,
     required String instructionId,
   }) : super(key: key) {
     instruction = Instruction(
@@ -13,7 +13,7 @@ class FinishInstructionPage extends StatelessWidget {
     );
   }
 
-  final String rideId;
+  // final String rideId;
   late final Instruction instruction;
 
   @override

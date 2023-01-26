@@ -30,7 +30,13 @@ class InstructionPage extends StatelessWidget {
             Text(instruction.id),
             ElevatedButton(
               onPressed: () {
-                context.go('/home/rides/ride/instruction/finishInstruction?rideId=$rideId&instructionId=${instruction.id}');
+                context.pushNamed(
+                  'finishInstruction',
+                  params: {
+                    'rideId': rideId,
+                    'instructionId': instruction.id,
+                  },
+                );
               },
               child: const Text('Finish instruction'),
             ),

@@ -23,7 +23,7 @@ class RidesPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ride'),
+        title: const Text('Rides'),
       ),
       body: Center(
         child: Padding(
@@ -31,11 +31,16 @@ class RidesPage extends StatelessWidget {
           child: ListView.builder(
             itemCount: rides.length,
             itemBuilder: (_, index) => ElevatedButton(
-                onPressed: () {
-                  context.go('/home/rides/ride?rideId=${rides[index].id}'/*, extra: rides[index]*/);
-                },
-                child: Text('Ride $index'),
-              ),
+              onPressed: () {
+                context.pushNamed(
+                  'ride',
+                  params: {
+                    'rideId': rides[index].id,
+                  }, /*, extra: rides[index]*/
+                );
+              },
+              child: Text('Ride $index'),
+            ),
           ),
         ),
       ),

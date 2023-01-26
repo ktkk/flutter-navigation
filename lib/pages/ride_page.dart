@@ -37,7 +37,12 @@ class RidePage extends StatelessWidget {
               Text(ride.id),
               ElevatedButton(
                 onPressed: () {
-                  context.go('/home/rides/ride/startRide?rideId=${ride.id}');
+                  context.pushNamed(
+                    'startRide',
+                    params: {
+                      'rideId': ride.id,
+                    },
+                  );
                 },
                 child: const Text('Start ride'),
               ),
@@ -46,8 +51,13 @@ class RidePage extends StatelessWidget {
                   itemCount: ride.instructions.length,
                   itemBuilder: (_, index) => ElevatedButton(
                     onPressed: () {
-                      context.go(
-                          '/home/rides/ride/instruction?rideId=${ride.id}&instructionId=${ride.instructions[index].id}' /*, extra: ride.instructions[index]*/);
+                      context.pushNamed(
+                        'instruction',
+                        params: {
+                          'rideId': ride.id,
+                          'instructionId': ride.instructions[index].id
+                        }, /*, extra: ride.instructions[index]*/
+                      );
                     },
                     child: Text('Instruction $index'),
                   ),
